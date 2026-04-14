@@ -1,5 +1,6 @@
 {
   "name": "dental-infographic",
+  "displayName": "Dental Infographic",
   "description": "워드 문서를 800×800px 카드뉴스 스타일 인포그래픽으로 변환하는 스킬 모음",
   "version": "1.0.0",
   "author": {
@@ -10,5 +11,5 @@
   "license": "MIT",
   "keywords": ["dental", "infographic", "card-news", "healthcare", "docx"],
   "skills": "./skills/",
-  "hooks": "./hooks/hooks.json"
+  "hooks": "./hooks/hooks-cursor.json"
 }

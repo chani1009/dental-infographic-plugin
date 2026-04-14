@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Session start hook — lists available skills to the AI agent
+
+PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SKILLS_DIR="$PLUGIN_ROOT/skills"
+
+output=""
+output+="## dental-infographic plugin\n\n"
+output+="다음 스킬들이 활성화되어 있습니다:\n\n"
+
+for skill_dir in "$SKILLS_DIR"/*/; do
+  skill_name=$(basename "$skill_dir")
+  skill_file="$skill_dir/SKILL.md"
+  if [ -f "$skill_file" ]; then
+    # description 필드 추출 (멀티라인 >는 첫 줄만)
+    desc=$(awk '/^description:/{found=1; sub(/^description:[[:space:]]*/,""); sub(/^>[[:space:]]*/,""); print; exit} found && /^[[:space:]]/{sub(/^[[:space:]]*/,""); print; exit}' "$skill_file" | head -1)
+    output+="- **$skill_name**: $desc\n"
+  fi
+done
+
+output+="\n스킬 내용은 \`skills/<name>/SKILL.md\`에서 확인하세요."
+
+if [ -n "$CURSOR_TRACE_ID" ]; then
+  printf '%s' "$output"
+else
+  printf '<parameter name="result">\n%s\n

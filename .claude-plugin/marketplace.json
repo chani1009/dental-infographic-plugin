@@ -1,0 +1,19 @@
+{
+  "name": "dental-infographic",
+  "owner": {
+    "name": "chani1009",
+    "url": "https://github.com/chani1009"
+  },
+  "metadata": {
+    "description": "워드 문서를 800×800px 카드뉴스 스타일 인포그래픽으로 변환하는 스킬 모음",
+    "version": "1.0.0",
+    "repository": "https://github.com/chani1009/dental-infographic-plugin"
+  },
+  "plugins": [
+    {
+      "name": "dental-infographic",
+      "description": "치과/의료 문서를 시각적인 카드뉴스 인포그래픽으로 변환하는 스킬들",
+      "source": "./"
+    }
+  ]
+}
