@@ -1,0 +1,9 @@
+{
+  "name": "dental-infographic",
+  "version": "1.0.0",
+  "description": "워드 문서(.docx)를 800×800px 카드뉴스 스타일 HTML 인포그래픽으로 변환하는 스킬. 치과/의료 문서를 시각적인 카드 이미지로 제작합니다.",
+  "author": {
+    "name": "chani1009"
+  },
+  "keywords": ["dental", "infographic", "card-news", "docx", "html", "healthcare"]
+}
