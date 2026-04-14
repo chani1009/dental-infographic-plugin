@@ -6,14 +6,22 @@
 
 ## 설치 방법
 
+### Claude Code
 ```
 /plugin marketplace add chani1009/dental-infographic-plugin
 /plugin install dental-infographic@dental-infographic
 ```
 
+### OpenAI Codex / Cursor / Windsurf
+프로젝트 루트에 `AGENTS.md` 파일을 추가하세요:
+```bash
+curl -o AGENTS.md https://raw.githubusercontent.com/chani1009/dental-infographic-plugin/main/AGENTS.md
+```
+또는 이 저장소를 클론한 뒤 `AGENTS.md`를 프로젝트에 복사하세요.
+
 ## 사용 방법
 
-Claude Code에서 다음과 같이 말하면 자동으로 스킬이 활성화됩니다:
+다음과 같이 말하면 자동으로 스킬이 활성화됩니다:
 
 - "이 워드 파일 인포그래픽으로 만들어줘"
 - "카드뉴스로 만들어줘"
