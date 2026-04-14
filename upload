@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# 변경된 스킬을 자동으로 커밋하고 GitHub에 올립니다
+
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+# 변경사항 확인
+if git diff --quiet && git diff --cached --quiet; then
+  echo "변경사항 없음"
+  exit 0
+fi
+
+# 변경된 스킬 목록 추출
+changed=$(git diff --name-only HEAD 2>/dev/null | grep "^skills/" | awk -F'/' '{print $2}' | sort -u | tr '\n' ', ' | sed 's/,$//')
+[ -z "$changed" ] && changed="skills"
+
+git add .
+git commit -m "Update: $changed"
+git push
+
+echo ""
+echo "✓ GitHub 업로드 완료"
